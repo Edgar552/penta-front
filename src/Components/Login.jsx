@@ -66,7 +66,7 @@ export default function Login() {
 
                     {/* RIGHT FORM */}
                     <div className="login-right">
-                        <h2>INGRESAR</h2>
+                        <h2>BIENVENIDO</h2>
                         {error && (
                             <div className="alert alert-danger py-2">
                                 {error}
