@@ -9,7 +9,7 @@ const api = axios.create({
 });
 
 
-// 🧠 token en memoria
+//token en memoria
 let accessToken = null;
 
 export const setAccessToken = token => {
@@ -18,7 +18,7 @@ export const setAccessToken = token => {
 
 export const getAccessToken = () => accessToken;
 
-// 🔐 attach token
+//attach token
 api.interceptors.request.use(config => {
     if (accessToken) {
         config.headers.Authorization = `Bearer ${accessToken}`;
@@ -26,13 +26,13 @@ api.interceptors.request.use(config => {
     return config;
 });
 
-// 🔄 refresh automático
+// refresh automático
 api.interceptors.response.use(
     res => res,
     async err => {
         const original = err.config;
 
-        // ❌ evitar loop infinito
+        // evitar loop infinito
         if (
             err.response?.status === 401 &&
             original?.url?.includes("/auth/refresh")
@@ -40,12 +40,12 @@ api.interceptors.response.use(
             return Promise.reject(err);
         }
 
-        // 🔄 intentar refresh una vez
+        // intentar refresh una vez
         if (err.response?.status === 401 && !original._retry) {
             original._retry = true;
 
             try {
-                const { data } = await api.get("/auth/refresh"); // 👈 FIX
+                const { data } = await api.get("/auth/refresh"); // FIX
 
                 setAccessToken(data.accessToken);
 
@@ -54,7 +54,7 @@ api.interceptors.response.use(
 
                 return api(original);
             } catch (refreshError) {
-                // 🚪 limpiar sesión si falla refresh
+                // limpiar sesión si falla refresh
                 setAccessToken(null);
 
                 // opcional: redirigir a login
