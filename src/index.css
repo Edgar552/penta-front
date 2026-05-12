@@ -1,0 +1,108 @@
+:root{
+  --dark-hki: #000000;
+
+  --primary-hki-color:#fcd920;
+  --secondary-hki-color: #404040;
+
+  --primary-hki-text:#666666;
+  --secondary-hki-text:#bdbec0;
+
+  --light-hki-color:#eeeeee;
+  --very-light-hki-color:#f9f9f9;
+  --white-hki-color: white;
+
+}
+
+
+.login-txt{
+  color: var(--primary-hki-color) !important;
+  font-size: 14px !important;
+}
+
+.card .card-header-primary .card-icon,
+.card .card-header-primary .card-text,
+.card .card-header-primary:not(.card-header-icon):not(.card-header-text),
+.card.bg-primary,
+.card.card-rotate.bg-primary .front,
+.card.card-rotate.bg-primary .back {
+  background: var(--dark-hki) !important;
+}
+
+.card .card-header-hki .card-icon,
+.card .card-header-hki .card-text,
+.card .card-header-hki:not(.card-header-icon):not(.card-header-text),
+.card.bg-hki,
+.card.card-rotate.bg-hki .front,
+.card.card-rotate.bg-hki .back {
+  background: var(--dark-hki) !important;
+}
+
+#form-icon{
+  color: var(--primary-hki-color) !important;
+}
+
+
+button:hover {
+  color: black;
+}
+
+button:active span::before {
+  background: var(--primary-hki-color);
+}
+
+
+
+/* TOAST CSS */
+
+.colored-toast.swal2-icon-success {
+  background-color: #83cb59 !important;
+}
+
+.colored-toast.swal2-icon-error {
+  background-color: #e44646 !important;
+}
+
+.colored-toast.swal2-icon-warning {
+  background-color: #f8bb86 !important;
+}
+
+.colored-toast.swal2-icon-info {
+  background-color: #3fc3ee !important;
+}
+
+.colored-toast.swal2-icon-question {
+  background-color: #87adbd !important;
+}
+
+.swal2-popup.colored-toast .swal2-title {
+  color: white;
+}
+
+.swal2-popup.colored-toast .swal2-close {
+  color: white;
+}
+
+.swal2-popup.colored-toast .swal2-html-container {
+  color: white;
+}
+
+@media(max-width: 991px){
+  .modal-content{
+    margin-left: 1%!important;
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
