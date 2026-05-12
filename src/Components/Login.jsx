@@ -100,7 +100,7 @@ export default function Login() {
                             <button
                                 className="btn btn-primary w-100"
                                 disabled={loading}>
-                                {loading ? "Signing in..." : "Login"}
+                                {loading ? "Enviando..." : "Acceder"}
                             </button>
                         </form>
 

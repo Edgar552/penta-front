@@ -205,9 +205,9 @@
     }
 
     .form-control {
-        background: rgba(255, 255, 255, 0.15);
+        /*background: rgba(255, 255, 255, 0.15);*/
         border: 1px solid rgba(255,255,255,0.2);
-        color: white;
+        color: black;
     }
 
     .form-control::placeholder {
