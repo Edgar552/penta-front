@@ -311,7 +311,7 @@ export default function MembershipsMainTableComponent() {
                                                 className="btn btn-sm btn-primary"
                                                 onClick={() =>
                                                     window.open(
-                                                        `${process.env.API_BASE_URL}/api/memberships/pdf/${t.id_elemento}`,
+                                                        `${process.env.REACT_APP_API_BASE_URL}/api/memberships/pdf/${t.id_elemento}`,
                                                         "_blank"
                                                     )
                                                 }
