@@ -3,7 +3,6 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import api from "../../API/api";
 import {useAuth} from "../../Providers/AuthContext";
 import React, { useState} from "react";
-import Swal from "sweetalert2";
 
 export function TicketDetails() {
     const { id } = useParams();
