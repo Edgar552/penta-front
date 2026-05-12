@@ -1,12 +1,13 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: process.env.PROD ? "/" : process.env.API_BASE_URL,
+    baseURL: process.env.API_BASE_URL,
     withCredentials: true,
     headers: {
         "Content-Type": "application/json",
     },
 });
+
 
 // 🧠 token en memoria
 let accessToken = null;
