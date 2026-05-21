@@ -1,11 +1,10 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {register as apiRegister} from "../../services/authServices";
-import api from "../../API/api";
-import {useCatalogsContext} from "../../Providers/CatalogContext";
-import Select from "react-select";
+// import api from "../../API/api";
+// import {useCatalogsContext} from "../../Providers/CatalogContext";
 import {showSmallSuccess} from "../../utils/alert";
-import {useQuery} from "@tanstack/react-query";
+// import {useQuery} from "@tanstack/react-query";
 
 export default function UsersFormComponent() {
     const navigate = useNavigate();
@@ -21,8 +20,8 @@ export default function UsersFormComponent() {
 
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-    const [selectedLocations, setSelectedLocations] = useState([]);
-    const [selectedRoles, setSelectedRoles] = useState([]);
+    // const [selectedLocations, setSelectedLocations] = useState([]);
+    // const [selectedRoles, setSelectedRoles] = useState([]);
 
     const handleChange = e => {
         setForm({
@@ -31,17 +30,17 @@ export default function UsersFormComponent() {
         });
     };
 
-    const { data } = useQuery({
-        queryKey: ["role"],
-        queryFn: async () => {
-            const res = await api.get('auth/getRoles');
-            return res.data;
+    // const { data } = useQuery({
+    //     queryKey: ["role"],
+    //     queryFn: async () => {
+    //         const res = await api.get('auth/getRoles');
+    //         return res.data;
+    //
+    //     },
+    //
+    // });
 
-        },
-
-    });
-
-    const { catalogs } = useCatalogsContext();
+    // const { catalogs } = useCatalogsContext();
     if (loading) return <p>Loading...</p>;
     // const locationList = catalogs.location;
     // const roleList = data?.data;
@@ -69,8 +68,8 @@ export default function UsersFormComponent() {
                 name: form.name,
                 email: form.email,
                // password: form.password,
-                locations: selectedLocations,
-                roles: selectedRoles,
+               //  locations: selectedLocations,
+               //  roles: selectedRoles,
             });
 
             //setAccessToken(data.token);

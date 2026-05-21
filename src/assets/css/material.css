@@ -4978,7 +4978,7 @@ tbody.collapse.show {
 }
 
 .page-item.active .page-link {
-    width: 30px;
+    width: 60px;
     z-index: 1;
     color: var(--light-hki-color);
     background-color: var(--dark-hki);

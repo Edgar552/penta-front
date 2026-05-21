@@ -7,7 +7,6 @@ import {Routes, Route, HashRouter} from "react-router-dom";
 import {NavbarComponent} from "./Components/NavbarComponent/NavbarComponent";
 import {HomeTicketsComponent} from "./Components/HomeTicketsComponent";
 import {MembershipComponent} from "./Components/MembershipsComponent/MembershipComponent";
-import {TicketDetails} from "./Components/MembershipsComponent/TicketDetailsComponent";
 import {MembershipFormComponent} from "./Components/MembershipsComponent/MembershipFormComponent";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Login from "./Components/Login";
@@ -43,10 +42,6 @@ function App() {
                   element={<MembershipEditPage />}
               />
 
-              <Route
-                  path=":id"
-                  element={<TicketDetails />}
-                  handle={{ title: "Ticket Details" }}/>
               </Route>
 
             <Route path="/users" element={<HomeUsersComponent/>}/>

@@ -29,6 +29,20 @@ const FormInput = ({ label, name, type = "text", state, handleChange,required })
     </div>
 );
 
+const FormInputLarge = ({ label, name, type = "text", state, handleChange,required }) => (
+    <div className="col-md-8 mb-3">
+        <label className="form-label">{label}</label>
+        <input
+            type={type}
+            className="form-control"
+            name={name}
+            value={state[name] || ""}
+            onChange={handleChange}
+            required={required}
+        />
+    </div>
+);
+
 const FormSelect = ({ label, name, list, valueKey, labelKey, state, handleChange, required  }) => (
     <div className="col-md-4 mb-3">
         <label className="form-label">{label}</label>
@@ -307,14 +321,6 @@ function MembershipFormComponent({ mode = "create", initialData = null }) {
                         <div className="form-card-section">
                             <div className="section-header">Información de Solicitud</div>
                             <div className="row">
-                                <FormSelect label="Tipo Solicitud" name="id_renovacion"
-                                            list={catalogs.renovacion}
-                                            valueKey="id_renovacion"
-                                            labelKey="renovacion"
-                                            state={state} handleChange={handleChange} required={true} />
-
-                                <FormInput label="Matrícula" name="matricula"
-                                           state={state} handleChange={handleChange} required={true}/>
 
                                 <FormDateInput
                                     label="Fecha de Ingreso"
@@ -324,8 +330,8 @@ function MembershipFormComponent({ mode = "create", initialData = null }) {
                                     required={true}
                                 />
 
-                                {/*<FormInput type="date" label="Fecha de Ingreso" name="fecha_ingreso"*/}
-                                {/*           state={state} handleChange={handleChange} required={true}/>*/}
+                                <FormInput label="Matrícula" name="matricula"
+                                           state={state} handleChange={handleChange} required={true}/>
 
 
                                 <FormInput label="Reclutamiento" name="reclutamiento"
@@ -451,8 +457,12 @@ function MembershipFormComponent({ mode = "create", initialData = null }) {
                         <div className="form-card-section">
                             <div className="section-header">Contacto</div>
                                 <div className="row">
-                                    <FormInput label="Domicilio (Calle , N&uacute;mero, Colonia)" name="domicilio"
-                                               state={state} handleChange={handleChange} required={true}/>
+                                   <FormInputLarge label="Domicilio (Calle , N&uacute;mero, Colonia)" name="domicilio"
+                                              state={state} handleChange={handleChange} required={true}/>
+                                </div>
+
+                                <div className="row">
+
 
                                     <FormSelect label="Municipio" name="id_municipio"
                                                 list={catalogs.municipio}
