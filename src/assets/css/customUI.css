@@ -190,7 +190,7 @@
         width: 100%;
         padding: 30px 25px;
         background: transparent;
-        color: white;
+        color: #000000;
     }
 
     .login-right h2 {
@@ -200,24 +200,24 @@
         color: #000000;
     }
 
-    .form-label {
+    .login-right .form-label {
         color: #505050;
     }
 
-    .form-control {
+    .login-right .form-control {
         /*background: rgba(255, 255, 255, 0.15);*/
-        border: 1px solid rgba(255,255,255,0.2);
-        color: black;
+        border: 1px solid rgba(0,0,0,0.25);
+        color: #000000;
     }
 
-    .form-control::placeholder {
-        color: rgba(255,255,255,0.7);
+    .login-right .form-control::placeholder {
+        color: rgba(0,0,0,0.55);
     }
 
-    .form-control:focus {
+    .login-right .form-control:focus {
         background: rgba(255,255,255,0.2);
-        color: white;
-        border-color: rgba(255,255,255,0.4);
+        color: #000000;
+        border-color: rgba(0,0,0,0.5);
         box-shadow: none;
     }
 
